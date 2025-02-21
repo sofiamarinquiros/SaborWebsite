@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sabor Website</title>
+  <link href="https://fonts.googleapis.com/css2?family=Moul&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #FFD8C2;
+    }
+
+    .top-bar {
+        width: 100%;
+        background-color: #CC8C76;
+        height: 120px;
+        display: flex;
+        justify-content: space-between; /* Aligns the content to the left */
+        align-items: center;
+        padding-left: 3px; /* Adds a little space from the left edge */
+        position: relative; /* Added to allow absolute positioning of text */
+        box-sizing: border-box;
+        }
+
+    .top-bar img {
+        height: 100px; /* Adjust the size of the logo */
+    }
+
+    .text-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centers the text container vertically */
+        position: absolute; /* Makes text container's position relative to top-bar */
+        left: 50%; /* Moves the container to the middle of the top-bar */
+        transform: translateX(-50%); /* Adjusts by 50% of its width to center it */
+    }
+
+    .top-bar h1 {
+        font-family: 'Moul', sans-serif;
+        font-size: 50px;
+        color: #422018;
+        margin: 0;
+    }
+
+    .top-bar p {
+        font-family: 'Montserrat Alternates', sans-serif;
+        font-size: 10px;
+        color: #422018;
+        margin-top: -5px;
+        margin-bottom: 0;
+    }
+    .navbar {
+        display: flex;
+        justify-content: space-evenly;
+        padding: 30px 0;
+        font-family: 'Montserrat Alternates', sans-serif;
+    }
+
+    .navbar a {
+        color: #AD6647;
+        text-decoration: none;
+        font-size: 16px;
+        transition: color 0.3s;
+    }
+
+    .navbar a:hover {
+        color: #FFD8C2; /* Hover effect color */
+    }
+
+    .bold {
+        font-weight: 900;  /* Makes the "Releve Applications" text bold */
+    }
+
+    .navbar-hr {
+        border: none;
+        border-top: 2px solid #AD6647; /* Color of the bar */
+        width: 95%; /* 80% width of the page */
+        margin: 0; /* Remove any default margins */
+        padding: 0; /* Prevent padding from being applied */
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%); /* Centers the bar */
+    }
+    .contact-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        background-color: #FFFFFF;
+        border-radius: 8px;
+        margin: 30px auto;
+        width: 60%;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 15px;
+        border: 1px solid #AD6647;
+        border-radius: 5px;
+        font-size: 14px;
+    }
+
+    .contact-form button {
+        padding: 12px 30px;
+        font-family: 'Montserrat Alternates', sans-serif;
+        background-color: #AD6647;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    .contact-form button:hover {
+        background-color: #CC8C76;
+    }
+
+    .confirmation-message {
+        font-family: 'Montserrat Alternates', sans-serif;
+        margin-top: 20px;
+        color: #3D9E4B;
+        font-size: 16px;
+        display: none;
+    }
+    .contact-form h2 {
+        font-family: 'Montserrat Alternates', sans-serif;
+        font-size: 24px; /* You can adjust the size if needed */
+        color: #422018;
+        margin-bottom: 20px;
+    }
+
+
+  </style>
+</head>
+<body>
+  <div class="top-bar">
+    <img src="images/SaborLogo.png" alt="Sabor Logo"> 
+    <div class="text-container">
+      <h1>Sabor</h1>
+      <p>Columbia’s hottest Latin dance team</p>
+    
+  </div>
+</div>
+      <!-- Navigation Bar -->
+<div class="navbar">
+    <a href="home.html">Home</a>
+    <a href="Meet_team.html">Meet the Team</a>
+    <!-- <a href="Events.html">Events</a> -->
+    <a href="https://docs.google.com/forms/d/13UySyVj2qQlYzhhTR1yDQHtKyHgNrKNerWtkiYfongE/edit?usp=drivesdk" class="bold">Releve Applications</a>
+    <!--  <a href="#photos">Photos</a>
+    <a href="#videos">Videos</a> -->
+    <a href="Contact_us.html">Contact Us</a>
+</div>
+<!-- Horizontal line under the navbar -->
+<hr class="navbar-hr">
+<!-- Contact Form -->
+<div class="contact-form">
+    <h2>Contact Us</h2>
+    <form id="contactForm" action="https://formspree.io/f/mvgzllyl" method="POST">
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+    <div id="confirmationMessage" class="confirmation-message">
+      Thank you for reaching out! Your message has been sent.
+    </div>
+  </div>
+
+  <script>
+    function showConfirmation() {
+      // Display the confirmation message
+      document.getElementById('confirmationMessage').style.display = 'block';
+
+      // Prevent the form from submitting immediately
+      return false;
+    }
+  </script>
+</body>
+</html>
+
+
+
+
